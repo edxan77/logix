@@ -11,7 +11,7 @@ class PasswordResetRequest extends Request
     {
         return [
             'token' => 'string',
-            'password' => 'required|string|min:8|max:255',
+            'password' => 'required|string|min:6|max:100|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/',
             'password_confirmation' => 'required_with:password|same:password',
         ];
     }
