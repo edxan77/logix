@@ -1,0 +1,203 @@
+:root {
+    --blue-accent-1: rgb(54, 76, 147);
+    --blue-accent-2: rgb(82, 103, 182);
+    --bg-accent-1: rgb(34, 40, 57);
+}
+
+*,
+:before,
+:after,
+::placeholder {
+    color: white;
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e5e7eb;
+    padding: 0;
+    margin: 0;
+    font-family: 'Kanit', sans-serif;
+}
+
+::placeholder {
+    color: rgb(113, 113, 113);
+}
+
+* {
+    transition: 0.3s all ease;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    background-color: rgb(18 21 30 / 1);
+}
+
+mark {
+    background-color: transparent;
+    color: white;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1100px;
+    width: 100%;
+
+    display: flex;
+}
+
+header {
+    .wrapper {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    border-bottom: 1px solid rgba(211, 211, 211, 0.25);
+    padding: 20px 0px;
+
+    nav {
+        ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+
+            li {
+                a {
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+
+            .buttons {
+                margin-left: 20px;
+                display: flex;
+                gap: 10px;
+
+                .login {
+                    background-color: rgb(44, 51, 73);
+                    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.16) 0px 2px 3px 0px, rgba(242, 242, 242, 0.16) 0px 1px 2px 0px inset, rgba(0, 0, 0, 0.2) 0px -1px 2px 0px inset;
+                }
+
+                .signup {
+                    background-color: var(--blue-accent-1);
+                    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(134, 145, 164) 0px 1px 2px 0px inset, rgba(0, 0, 0, 0.16) 0px 2px 3px 0px, rgba(0, 0, 0, 0.4) 0px -1px 2px 0px inset;
+                }
+
+                a {
+                    border-radius: 0.5rem;
+                    padding: 10px 20px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+main {
+    .wrapper {
+        justify-content: center;
+        flex-direction: column;
+        gap: 100px;
+    }
+
+    .main-intro {
+        padding: 50px;
+        text-align: center;
+
+        .intro-title {
+            font-size: 4rem;
+
+            mark {
+                color: var(--blue-accent-2);
+            }
+        }
+
+        .intro-desc {
+            text-align: center;
+            span {
+                color: rgb(130, 130, 130);
+            }
+        }
+
+        .quicksearch {
+            display: flex;
+            flex-direction: column;
+            margin-top: 100px;
+            gap: 15px;
+
+            .quicksearch-input {
+                display: flex;
+                gap: 10px;
+
+                input[type=text] {
+                    background-color: var(--bg-accent-1);
+                    color: white;
+                    width: 100%;
+                    padding: 1rem;
+                    border: 1px solid rgba(129, 129, 129, 0.25);
+                    border-radius: 0.5rem;
+
+                    &:focus {
+                        outline: 0;
+                        box-shadow: 0;
+                    }
+                }
+
+                button {
+                    cursor: pointer;
+                    background-color: var(--blue-accent-1);
+                    color: white;
+                    padding: 10px 20px;
+                    font-weight: 500;
+                    border-radius: 0.5rem;
+                    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(134, 145, 164) 0px 1px 2px 0px inset, rgba(0, 0, 0, 0.16) 0px 2px 3px 0px, rgba(0, 0, 0, 0.4) 0px -1px 2px 0px inset;
+                }
+            }
+            .trending {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                position: relative;
+                .topic {
+                    background-color: var(--bg-accent-1) / 0.2;
+                    padding: 10px;
+                    border-radius: 0.5rem;
+                    font-size: 15px;
+                    border: 1px solid rgba(129, 129, 129, 0.25);
+                    backdrop-filter: blur(5px);
+                    -webkit-backdrop-filter: blur(5px);
+                    text-transform: lowercase;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: rgb(160, 160, 160);
+                    }
+                }
+
+                #trendingMark {
+                    position: absolute;
+                    bottom: 0%;
+                    z-index: -1;
+                    font-size: 2rem;
+                    font-weight: 500;
+                    
+                    &.right {
+                        color: rgba(255, 255, 255, 0.15);
+                        right: 0%;
+                    }
+                    
+                    &.left {
+                        color: rgba(76, 99, 167, 0.364);
+                        left: 0%;
+                    }
+                }
+            }
+        }
+    }
+}
